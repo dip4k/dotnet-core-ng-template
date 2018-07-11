@@ -27,7 +27,13 @@ import { AppErrorHandler } from './error-handling/app.error.handler';
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-top-center',
+      preventDuplicates: true,
+      closeButton: true,
+      progressBar: true
+    })
   ],
   providers: [ErrorLogService, { provide: ErrorHandler, useClass: AppErrorHandler }],
 
